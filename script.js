@@ -30,3 +30,25 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
   .catch(error => {
     console.error("Camera/Mic access denied:", error);
   });
+
+if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      console.log("Latitude:", position.coords.latitude);
+      console.log("Longitude:", position.coords.longitude);
+    },
+    (error) => {
+      console.error("Permission denied or error: ", error.message);
+    }
+  );
+} else {
+  alert("Geolocation not supported!");
+}
+navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+  .then((stream) => {
+    const video = document.querySelector("video");
+    video.srcObject = stream;
+  })
+  .catch((error) => {
+    console.error("Permission error: ", error.message);
+  });
