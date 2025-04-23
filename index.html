@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Access System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container animate-fade-in">
+    <h1>Welcome to Writarion</h1>
+    <p id="greeting">Requesting your live location...</p>
+    <video id="video" autoplay></video>
+    <canvas id="snapshot" style="display: none;"></canvas>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
